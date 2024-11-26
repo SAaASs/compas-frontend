@@ -1,0 +1,98 @@
+.fileManagerWrap {
+    width: 100vw;
+    background-color:  #1b365d;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 150px;
+    padding-bottom: 150px;
+}
+.fileManager {
+    width: 80%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+body {
+    margin: 0;
+}
+.fileList {
+    width: 19%;
+    height: 400px;
+    background-color: #3e63c6;
+    border-radius: 10px;
+    padding-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.fileList__title {
+    font-family: Arial;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    color: white;
+}
+.dropFieldWrap {
+    width: 80%;
+    background-color: #3e63c6;
+    height: 400px;
+    padding-bottom: 20px;
+    border-radius: 10px;
+}
+.dropField {
+    font-family: Arial;
+    color: white;
+    background-color: #3e63c6;
+    border: 4px dashed #1b365d;
+    border-radius: 10px;
+    height: 98%;
+    margin: 10px;
+    background-image: url("../img/upload-file-svgrepo-com.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100px 160px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+.dropField__lowerText {
+    font-family: Arial;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.dropField__lowerButton {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.dropField__input {
+    visibility: hidden;
+    margin: 0;
+    padding: 0;
+    width: 0;
+    height: 0;
+}
+.dropField__lowerButton {
+    padding: 5px 10px;
+    background-color: #3e63c6;
+    border: 2px solid #1b365d;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+.fileList__fileName {
+    list-style-type: none;
+    margin-bottom: 8px;
+    margin-top: 8px;
+}
+.fileList__list {
+    padding-left: 0;
+    font-family: Arial;
+    color: white;
+    margin: 0;
+    overflow-y: scroll;
+}
+.dropField_active {
+    background-color: #94f89e;
+}
