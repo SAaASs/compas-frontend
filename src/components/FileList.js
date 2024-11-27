@@ -15,14 +15,8 @@ function FileList({files, setFiles}) {
                 </button>
                 <button onClick={(e) => {
                     e.preventDefault();
-                    const data = new FormData();
-                    files.forEach((file) => {
-                        data.append(file.name, file)
-                    });
-                    baseApi.uploadFiles(data).then((res) => {
+                    baseApi.uploadFiles(files).then((res) => {
                         console.log(res)
-                    }).catch((err) => {
-                        console.log(err)
                     })
                 }}>Отправить
                 </button>
