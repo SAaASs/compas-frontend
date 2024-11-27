@@ -13,7 +13,7 @@ export class Api {
         return fetch(this._baseUrl + 'upload', {
             method: 'POST',
             headers: this._headers,
-            body: filesArray
+            body: {file: filesArray}
         }).then(this._checkResponse);
     }
 }
