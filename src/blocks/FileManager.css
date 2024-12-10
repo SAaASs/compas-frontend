@@ -1,11 +1,12 @@
-.fileManagerWrap {
+.main {
     width: 100vw;
     background-color:  #1b365d;
     display: flex;
-    justify-content: center;
+    height: 100vh;
     align-items: center;
     padding-top: 150px;
     padding-bottom: 150px;
+    flex-direction: column;
 }
 .fileManager {
     width: 80%;
@@ -95,4 +96,101 @@ body {
 }
 .dropField_active {
     background-color: #94f89e;
+}
+.dropField__urlInput {
+    width: 400px;
+    height: 20px;
+    background-color: #779bef;
+    border: 2px dashed #1b365d;
+    border-radius: 5px;
+    outline: none;
+}
+
+.dropField__urlInput::placeholder {
+    color: white;
+    padding-left: 20px;
+}
+
+.searchField__input {
+    height: 40px;
+    width: 98%;
+    border-radius: 10px;
+    outline: none;
+    padding: 0;
+    border: 2px dashed #1b365d;
+    background-color: #779bef;
+    padding-block: 0;
+    padding-inline: 0;
+}
+.searchField__button {
+    margin-top: 10px;
+    height: 40px;
+    width: 98%;
+    border-radius: 10px;
+    outline: none;
+    border: solid 2px #1b365d;
+    color: white;
+    padding: 0;
+    background-color: #3e63c6;
+}
+.searchField__form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px 0 10px 0;
+}
+.searchField__input::placeholder {
+    color: white;
+    padding-left: 20px;
+}
+.searchField {
+    margin-top: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #3e63c6;
+    border-radius: 10px;
+    width: 80%;
+}
+
+.searchField__results {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.searchResultText {
+    margin-block-start: 0;
+    margin-block-end: 0;
+    margin-left: 20px;
+    font-family: Arial;
+    color: white;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+.searchResult {
+    width: 98%;
+    background-color: #779bef;
+    border: 2px #1b365d solid;
+    outline: none;
+    height: max-content;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+}
+.searchResult___button {
+    height: 30px;
+    border-radius: 10px;
+    outline: none;
+    border: solid 2px #1b365d;
+    color: white;
+    background-color: #3e63c6;
+    width: 150px;
+    flex-shrink: 0;
+    margin: 10px 15px 10px 10px;
 }

@@ -1,6 +1,6 @@
 import {baseApi} from "../utils/Api";
 
-function FileList({files, setFiles}) {
+function FileList({files, setFiles, fileUrl, setFileUrl}) {
     return (
         <div className="fileList">
             <h4 className={'fileList__title'}>Список выбранных файлов</h4>
@@ -23,7 +23,23 @@ function FileList({files, setFiles}) {
             </>
 
             }
+            {fileUrl.length > 0 && <>
+                <p>{fileUrl}</p>
+                <button onClick={(e) => {
+                    e.preventDefault();
+                    setFileUrl([])
+                }}>Удалить
+                </button>
+                <button onClick={(e) => {
+                    e.preventDefault();
+                    baseApi.uploadFileUrl(fileUrl).then((res) => {
+                        console.log(res)
+                    })
+                }}>Отправить
+                </button>
+            </>
 
+            }
         </div>
     );
 }

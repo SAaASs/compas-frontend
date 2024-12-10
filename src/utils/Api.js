@@ -20,9 +20,31 @@ export class Api {
             body: formData
         }).then(this._checkResponse).catch((err)=>{console.log('error', err)});
     }
-
+    uploadFileUrl(url) {
+        const formData = new FormData();
+        formData.append('file_url', url);
+        return fetch(this._baseUrl + 'upload', {
+            method: 'POST',
+            body: formData
+        }).then(this._checkResponse).catch((err)=>{console.log('error', err)});
+    }
+    searchSomething(query, setRes) {
+        console.log('query:', query)
+        console.log('query:', typeof (query))
+        return fetch(this._baseUrl + 'search', {
+            method: 'POST',
+            headers: this._headers,
+            body: JSON.stringify({ "query": query })
+        }).then(this._checkResponse).then((res)=>{setRes(res); console.log(res)}).catch((err)=>{console.log('error', err)});
+    }
+    getFile(filename) {
+        return fetch(this._baseUrl + 'pdfs/' + filename, {
+            method: 'GET',
+        }).then(this._checkResponse).then((res)=>{console.log('trying to get a file///',res)}).catch((err)=>{console.log('error', err)});
+    }
 }
 
 export const baseApi = new Api({
     baseUrl: 'https://cdi.althgamer.ru/',
+    headers: {"Content-Type":'application/json'},
 });
