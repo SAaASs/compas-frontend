@@ -45,6 +45,6 @@ export class Api {
 }
 
 export const baseApi = new Api({
-    baseUrl: 'https://cdi.althgamer.ru/',
+    baseUrl: 'https://cdi.althgamer.ru/api/',
     headers: {"Content-Type":'application/json'},
 });
