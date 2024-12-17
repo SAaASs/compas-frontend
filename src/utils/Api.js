@@ -38,7 +38,7 @@ export class Api {
         }).then(this._checkResponse).then((res)=>{setRes(res); console.log(res)}).catch((err)=>{console.log('error', err)});
     }
     getFile(filename) {
-        return fetch(this._baseUrl + 'pdfs/' + filename, {
+        return fetch('https://cdi.althgamer.ru/' + 'pdfs/' + filename, {
             method: 'GET',
         }).then(this._checkResponse).then((res)=>{console.log('trying to get a file///',res)}).catch((err)=>{console.log('error', err)});
     }
