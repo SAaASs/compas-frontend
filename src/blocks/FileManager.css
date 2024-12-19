@@ -166,14 +166,13 @@ body {
     margin-block-end: 0;
     margin-left: 20px;
     font-family: Arial;
-    color: white;
+    color: black;
     padding-top: 10px;
     padding-bottom: 10px;
 }
 .searchResult {
-    width: 98%;
-    background-color: #779bef;
-    border: 2px #1b365d solid;
+    background-color: #FFFFFF;
+    border: 1px #1b365d solid;
     outline: none;
     height: max-content;
     border-radius: 10px;
@@ -184,13 +183,201 @@ body {
 
 }
 .searchResult___button {
-    height: 30px;
+    background: #2a74da;
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    align-self: start;
+    margin: 5px;
+    margin-left: 20px;
+}
+
+
+
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    background: #f3f3f3;
+    color: #333;
+}
+
+/* Хеддер с уменьшенными отступами */
+header {
+    background: linear-gradient(to right, #2a74da, #1f5bb3);
+    color: #fff;
+    padding: 20px 20px; /* Уменьшенные отступы */
+    text-align: center;
+}
+
+header h1 {
+    margin: 0;
+    font-weight: normal;
+    font-size: 24px; /* Уменьшенный размер шрифта */
+}
+
+header p {
+    margin: 5px 0 0 0;
+    font-size: 14px; /* Уменьшенный размер шрифта */
+}
+
+/* Основной контейнер с синей рамкой */
+.wrapper {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+}
+.container {
+    width: 90%;
+    max-width: 1400px;
+    background: #fff;
+    border: 2px solid #2a74da;
     border-radius: 10px;
-    outline: none;
-    border: solid 2px #1b365d;
-    color: white;
-    background-color: #3e63c6;
-    width: 150px;
-    flex-shrink: 0;
-    margin: 10px 15px 10px 10px;
+    padding: 20px; /* Отступ внутри контейнера */
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    display: flex;
+    flex-direction: column;
+    gap: 40px; /* Отступы между блоками */
+}
+
+.row1 {
+    display: flex;
+    gap: 40px;
+    padding: 10px; /* Отступы вокруг элементов */
+}
+
+.upload-block {
+    flex: 0 0 30%;
+    background: #f9f9f9;
+    border-radius: 10px;
+    border: 1px solid #ddd;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.05);
+}
+
+.cluster-block {
+    flex: 0 0 67.55%;
+    background: #f9f9f9;
+    border-radius: 10px;
+    border: 1px solid #ddd;
+    padding: 20px;
+    margin: 0px 0; /* Внешние отступы сверху и снизу */
+    box-shadow: 0 0 10px rgba(0,0,0,0.05);
+}
+
+.row-full {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 0px; /* Внутренние отступы */
+}
+
+.search-block, .search-result-block {
+    background: #f9f9f9;
+    border-radius: 10px;
+    border: 1px solid #ddd;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.05);
+}
+
+/* Заголовки с иконками */
+h2, h3 {
+    margin-top: 0;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 18px;
+}
+
+h2.doc-upload:before {
+    content: "📄";
+}
+
+h2.search-text:before {
+    content: "🔍";
+}
+
+h3.cluster-title:before {
+    content: "🧩";
+}
+
+h3.result-title:before {
+    content: "📑";
+}
+
+.hint {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 10px;
+}
+
+.input-group {
+    margin-bottom: 15px;
+    display: flex;
+    flex-direction: column;
+}
+
+button {
+    background: #2a74da;
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    align-self: start;
+    margin-top: 5px;
+
+}
+
+button:hover {
+    background: #1f5bb3;
+}
+
+input[type="file"], input[type="text"] {
+    margin-bottom: 10px;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background: #fff;
+    font-size: 14px;
+}
+
+.result {
+    white-space: pre-wrap;
+    background: #f2f2f2;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    margin-top: 10px;
+    font-size: 14px;
+    min-height: 80px;
+    margin-bottom: 15px;
+}
+.result_clast {
+    white-space: pre-wrap;
+    background: #f2f2f2;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    margin-top: 10px;
+    font-size: 14px;
+    min-height: 200px;
+}
+
+/* Адаптивность для мобильных устройств */
+@media (max-width: 768px) {
+    .row1 {
+        flex-direction: column;
+    }
+
+    .upload-block, .cluster-block {
+        flex: 1 1 100%;
+    }
 }

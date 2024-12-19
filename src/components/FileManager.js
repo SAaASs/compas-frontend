@@ -42,7 +42,7 @@ function FileManager() {
     }
     return (
         <>
-            <section className='main'>
+            <section className='main' style={{ display: 'none' }}>
                 <section className={'fileManager'}>
                     <FileList fileUrl={fileUrl} setFileUrl={setFileUrl} files={files} setFiles={setFiles}/>
                     <div className={'dropFieldWrap'}>
@@ -73,6 +73,67 @@ function FileManager() {
                         ))}
                     </div>
                 </section>
+            </section>
+            <section>
+                <header>
+                    <h1>Документный компас</h1>
+                    <p>Загрузите документ (pdf), выполните кластеризацию и найдите нужную информацию в тексте</p>
+                </header>
+
+                <div className="wrapper">
+                    <div className="container">
+
+
+                        <div className="row1">
+                            <div className="upload-block">
+                                <h2 className="doc-upload">Загрузить документ</h2>
+                                <div className="hint">Поддерживается формат .pdf</div>
+                                <div className="input-group">
+                                    <input onChange={handleChange} type="file" id="pdfInput" accept=".pdf"/>
+                                    <button id="clusterBtn" onClick={(e) => {
+                                        e.preventDefault();
+                                        baseApi.uploadFiles(files).then((res) => {
+                                            console.log(res)
+                                        })
+                                    }}>Кластеризовать</button>
+                                </div>
+                            </div>
+
+                            <div className="cluster-block">
+                                <h3 className="cluster-title">Результаты кластеризации</h3>
+                                <div className="result_clast" id="clusterResult">Здесь будут отображены результаты
+                                    кластеризации.
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div className="row-full">
+                            <div className="search-block">
+                                <h2 className="search-text">Поиск по тексту</h2>
+
+                                <form onSubmit={handleSearchSubmit}  className="input-group">
+                                    <input type="text" id="searchQuery" placeholder="Введите слово или фразу"/>
+                                    <button  id="searchBtn">Найти</button>
+                                </form>
+                            </div>
+                        </div>
+
+
+                        <div className="row-full">
+                            <div className="search-result-block">
+                                <h3 className="result-title">Результаты поиска</h3>
+                                <div className="result" id="searchResult">Здесь будут отображаться найденные
+                                    фрагменты.
+                                </div>
+                                {searchResults.results.map((result, i) => (
+                                    <SearchResult result={result} key={i} />
+                                ))}
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
             </section>
         </>
     );
