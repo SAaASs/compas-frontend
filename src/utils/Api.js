@@ -18,7 +18,7 @@ export class Api {
         return fetch(this._baseUrl + 'upload', {
             method: 'POST',
             body: formData
-        }).then(this._checkResponse).catch((err)=>{console.log('error', err)});
+        }).then(this._checkResponse).catch((err)=>{if (err=='Ошибка 409') alert('Ошибка 409: Этот документ уже загружен')});
     }
     uploadFileUrl(url) {
         const formData = new FormData();
@@ -26,7 +26,7 @@ export class Api {
         return fetch(this._baseUrl + 'upload', {
             method: 'POST',
             body: formData
-        }).then(this._checkResponse).catch((err)=>{console.log('error', err)});
+        }).then(this._checkResponse).catch((err)=>{alert('error', err)});
     }
     searchSomething(query, setRes) {
         console.log('query:', query)

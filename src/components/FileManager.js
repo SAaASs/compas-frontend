@@ -101,8 +101,10 @@ function FileManager() {
 
                             <div className="cluster-block">
                                 <h3 className="cluster-title">Результаты кластеризации</h3>
-                                <div className="result_clast" id="clusterResult">Здесь будут отображены результаты
-                                    кластеризации.
+                                <div className="result_clast" id="clusterResult">
+                                    <p>0: транспорт, промышленность, техника</p>
+                                    <p>1: развитие, экология, труд</p>
+                                    <p>2: энергетика, торговля, логистика</p>
                                 </div>
                             </div>
                         </div>
@@ -123,12 +125,12 @@ function FileManager() {
                         <div className="row-full">
                             <div className="search-result-block">
                                 <h3 className="result-title">Результаты поиска</h3>
-                                <div className="result" id="searchResult">Здесь будут отображаться найденные
-                                    фрагменты.
+                                <div className="result" id="searchResult">
+                                    {searchResults.results.length > 0? <>{searchResults.results.map((result, i) => (
+                                        <SearchResult result={result} key={i} />
+                                    ))}</>:<p>Здесь будут отображаться найденные фрагменты.</p>}
+
                                 </div>
-                                {searchResults.results.map((result, i) => (
-                                    <SearchResult result={result} key={i} />
-                                ))}
                             </div>
                         </div>
 
